@@ -10,7 +10,7 @@ class XML
     private $_doc = null;
     private $_errors = [];
 
-    public function __construct(string $xml = null)
+    public function __construct(?string $xml = null)
     {
         $this->parse($xml);
     }
@@ -20,7 +20,7 @@ class XML
      *
      *@return boolean
     */
-    public function parse(string $xml = null)
+    public function parse(?string $xml = null)
     {
         $this->_doc = null;
         $this->_errors = [];
