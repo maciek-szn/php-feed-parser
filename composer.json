@@ -1,5 +1,5 @@
 {
-    "name": "forensic/feed-parser",
+    "name": "maciek-szn/feed-parser",
     "description": "A fully integrated ATOM, RSS and RDF syndication feed parser",
     "type": "library",
     "license": "MIT",
