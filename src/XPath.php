@@ -27,7 +27,7 @@ class XPath
         $this->_context_node = $context_node;
     }
 
-    protected function resolveContextNode(DOMNode $context_node = null)
+    protected function resolveContextNode(?DOMNode $context_node = null)
     {
         if (!is_null($context_node))
             return $context_node;
@@ -66,7 +66,7 @@ class XPath
      *@param DOMNode $context_node - the selector context
      *@return DOMNode|null
     */
-    public function selectNode(string $expression, DOMNode $context_node = null)
+    public function selectNode(string $expression, ?DOMNode $context_node = null)
     {
         $result = $this->_dom_xpath->query($expression, $this->resolveContextNode($context_node));
         if ($result === false || $result->length === 0)
@@ -83,7 +83,7 @@ class XPath
      *@param DOMNode $context_node - the selector context
      *@return DOMNodeList|null
     */
-    public function selectNodes(string $expression, DOMNode $context_node = null)
+    public function selectNodes(string $expression, ?DOMNode $context_node = null)
     {
         $result = $this->_dom_xpath->query($expression, $this->resolveContextNode($context_node));
         if ($result === false || $result->length === 0)
@@ -99,7 +99,7 @@ class XPath
      *@param DOMNode $context_node - the selector context
      *@return DOMNode|null
     */
-    public function selectAltNode(string $expressions, DOMNode $context_node = null)
+    public function selectAltNode(string $expressions, ?DOMNode $context_node = null)
     {
         foreach(preg_split('/\s*\|\|\s*/', $expressions) as $expression) {
             $result = $this->selectNode($expression, $context_node);
@@ -118,7 +118,7 @@ class XPath
      *@param DOMNode $context_node - the selector context
      *@return DOMNodeList|null
     */
-    public function selectAltNodes(string $expressions, DOMNode $context_node = null)
+    public function selectAltNodes(string $expressions, ?DOMNode $context_node = null)
     {
         foreach(preg_split('/\s*\|\|\s*/', $expressions) as $expression) {
             $result = $this->selectNodes($expression, $context_node);
