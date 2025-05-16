@@ -79,7 +79,7 @@ class Parser
      *@param bool [$remove_styles] - the remove styles attributes
      *@return bool|this
      */
-    public function removeStyles(bool $remove_styles = null)
+    public function removeStyles(?bool $remove_styles = null)
     {
         if (is_null($remove_styles))
             return $this->_options['remove-styles'];
@@ -94,7 +94,7 @@ class Parser
      *@param bool [$remove_scripts] - the remove scripts attributes
      *@return bool|this
      */
-    public function removeScripts(bool $remove_scripts = null)
+    public function removeScripts(?bool $remove_scripts = null)
     {
         if (is_null($remove_scripts))
             return $this->_options['remove-scripts'];
